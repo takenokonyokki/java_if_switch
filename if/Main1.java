@@ -123,5 +123,83 @@ public class Main1 {
 			break;
 		}
 		
+		
+		//3-14 １から10までの二つの乱数を発生させ、それぞれa,bという変数に代入して表示し、aのほうが大きければ、”aのほうが大きいです。”と表示し、bのほうが大きければ”bのほうが大きいです。”
+		//     と表示し、そうでなければ、”等しいです”と表示するプログラムを作りなさい。
+		int a = (int)(Math.random()*10)+1;
+		int b = (int)(Math.random()*10)+1;
+		System.out.println("a=" + a);
+		System.out.println("b=" + b);
+		if (a > b) {
+			System.out.println("aのほうが大きいです");
+		} else if (b > a) {
+			System.out.println("bの方が大きいです");
+		} else {
+			System.out.println("等しいです");
+		}
+		
+		
+		/* 3-15 １から100までの数値を乱数で発生させて表示し、以下の処理を行いなさい。
+				80点以上なら”優”と表示。
+				80点未満、70点以上なら、”良”と表示。
+				70点未満、60点以上なら、”可”と表示。
+				60点未満なら、”不可”と表示。
+		*/
+		int num9 = (int)(Math.random()*100)+1;
+		System.out.println("点数 : " + num9);
+		if (num9 >= 80) {
+			System.out.println("優");
+		} else if (num9 < 80 || num9 >= 70) {
+			System.out.println("良");
+		} else if (num9 < 70 || num9 >= 60) {
+			System.out.println("可");
+		} else {
+			System.out.println("不可");
+		}
+		
+		
+		//3-16 1から100までの数値を乱数で発生させて表示し、以下の処理をしなさい。
+			/* ２の倍数であるなら、”2の倍数です。”と表示
+			   ３の倍数であるなら、”3の倍数です。”と表示
+			   ただし、2の倍数でもあり、3の倍数でもある場合は、”2と3の公倍数です。”と表示。*/
+		int num10 = (int)(Math.random()*100)+1;
+		System.out.println(num10);
+		if (num10 % 2 == 0 && num10 % 3 == 0) { //2の倍数であるならの条件式を先に持ってきた場合、この条件式に来る前に終了してしまう。順番が大事。
+			System.out.println("2と3の公倍数です");
+		} else if (num10 % 3 == 0) {
+			System.out.println("3の倍数です");
+		} else if (num10 % 2 == 0) {
+			System.out.println("2の倍数です");
+		}
+		
+		
+		//3-17 1から100までの数値を乱数で発生させ、以下の処理をしなさい。
+		/* 50以下の場合”50以下です。”と表示。
+		   偶数の場合、”偶数です。”と表示。
+		   ただし、50以下でかつ偶数の場合、”50以下の偶数です。”と表示。*/
+		int num11 = (int)(Math.random()*100)+1;
+		System.out.println(num11);
+		if (num11 <= 50 && num11 % 2 == 0) {
+			System.out.println("50以下の偶数です"); //条件式の順番大事
+		} else if (num11 <= 50) {
+			System.out.println("50以下です");
+		} else if (num11 % 2 == 0) {
+			System.out.println("偶数です");
+		}
+		
+		
+		//3-18 乱数で、－10から35までの乱数を発生させ、”摂氏○○度”（○○が、発生した乱数）と表示させ、その値により、以下のように表示しなさい。
+		/* 30度以上の場合は、”真夏日です。”と表示。
+		   25度以上、30度未満の場合”夏日です。”と表示。
+		   0度未満の場合、”真冬日です。”と表示。*/
+		int num12 = (int)(Math.random()*46)-10;
+		System.out.println("摂氏" + num12 + "度");
+		if (num12 >= 30) {
+			System.out.println("真夏日です");
+		} else if (num12 >= 25 && num12 < 30) {
+			System.out.println("夏日です");
+		} else if (num12 < 0) {
+			System.out.println("真冬日です");
+		}
 	}
 }
